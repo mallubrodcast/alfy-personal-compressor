@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Alfy Personal Compressor - a premium file compression tool for images, PDFs, audio, and video." />
+  <title>Alfy Personal Compressor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">A</div>
+      <div>
+        <h1>Alfy Personal Compressor</h1>
+        <p>Premium file reduction tool</p>
+      </div>
+    </div>
+    <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme">◐</button>
+  </header>
+
+  <main class="container">
+    <section class="hero glass">
+      <p class="eyebrow">Private personal tool</p>
+      <h2>Reduce file size with a clean, fast, premium dashboard.</h2>
+      <p class="hero-text">
+        Upload a file, choose your compression percentage, and download the reduced version.
+        Built for images, PDFs, audio, and video with a polished modern interface.
+      </p>
+    </section>
+
+    <section class="grid-layout">
+      <div class="panel glass">
+        <div class="panel-head">
+          <div>
+            <h3>Upload file</h3>
+            <p>Drag and drop or browse from your device.</p>
+          </div>
+          <div class="badge">Secure</div>
+        </div>
+
+        <input id="fileInput" type="file" hidden />
+        <div id="dropZone" class="drop-zone" role="button" tabindex="0">
+          <div class="drop-icon">⬆</div>
+          <h4>Drop your file here</h4>
+          <p>Supported: JPG, JPEG, PNG, WEBP, PDF, MP3, MP4, MOV, AVI, MKV and more.</p>
+          <button id="browseBtn" class="primary-btn" type="button">Browse files</button>
+        </div>
+
+        <div class="control-group">
+          <div class="control-row">
+            <label for="qualityRange">Compression strength</label>
+            <output id="qualityValue">58%</output>
+          </div>
+          <input id="qualityRange" type="range" min="10" max="95" value="58" />
+          <div class="scale-labels">
+            <span>More compression</span>
+            <span>Higher quality</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="panel glass summary">
+        <div class="panel-head">
+          <div>
+            <h3>Output</h3>
+            <p>Track file details and download the result.</p>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <div class="file-preview" id="filePreview">File preview</div>
+          <div class="file-meta">
+            <p id="fileName">No file selected</p>
+            <span id="fileType">—</span>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span>Original size</span>
+            <strong id="originalSize">—</strong>
+          </div>
+          <div class="stat-box">
+            <span>Compressed size</span>
+            <strong id="compressedSize">—</strong>
+          </div>
+          <div class="stat-box">
+            <span>Saved</span>
+            <strong id="savedSize">—</strong>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-bar"><div id="progressBar"></div></div>
+          <p id="statusText">Ready to compress</p>
+        </div>
+
+        <a id="downloadLink" class="primary-btn download-btn" href="#" download aria-disabled="true">Download compressed file</a>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Alfy Personal Compressor • built for private use</p>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
